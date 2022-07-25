@@ -1,0 +1,31 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background: linear-gradient(45deg,#e66465, #9198e5);
+}
+
+.main-container {
+	min-height: calc(100vh - 136px)
+}
+
+table {
+	width: 100%;
+	text-align: center;
+}
+tr {
+	border: 1px solid white;
+}
+th,td {
+	padding: 10px;
+}
+footer {
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+}

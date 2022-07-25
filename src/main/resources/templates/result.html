@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/result.css}">
+	<title>Result Page</title>
+</head>
+<body>
+
+	<!-- Importing Navbar	-->
+	<div th:insert="navbar.html :: navbar"></div>
+
+	<!--	Main Container-->
+	<div class="main-container container py-5 px-4">
+		<div class="card bg-dark text-light py-5 px-4 mx-auto">
+			<img th:src="@{/images/survey1.png}" alt="image">
+
+			<h3 class="bg-danger text-center mb-5 p-2"> RESULT </h3>
+
+			<div class="d-flex justify-content-center">
+				<p> Student Name:&nbsp;&nbsp;</p>
+				<p th:if="${result}" th:text="${result.username}"></p>
+			</div>
+
+			<div class="d-flex justify-content-center">
+				<p> Average Survey Score :&nbsp;&nbsp;</p>
+				<p th:if="${result}" th:text="${result.totalCorrect}"></p>
+			</div>
+
+			<div class="d-flex justify-content-center">
+				<p> Student Satisfaction Status:&nbsp;&nbsp;</p>
+				<p th:if="${result}" th:text="${result.satisfaction}"></p>
+			</div>
+
+			<div class="d-flex justify-content-center">
+				<p> Student Message:&nbsp;&nbsp</p>
+				<p th:if="${result}" th:text="${result.message}"></p>
+			</div>
+
+			<div class="d-flex justify-content-center mt-4">
+				<button type="button" th:onclick="window.location.href='/score'"
+						class="btn btn-outline-warning mx-auto">View Survey Results</button>
+				<button type="button" th:onclick="window.location.href='/'"
+						class="btn btn-outline-warning mx-auto"> Back to Home</button>
+			</div>
+
+		</div>
+	</div>
+	<!-- Importing Footer	-->
+	<div th:insert="footer.html :: footer"></div>
+
+
+<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
